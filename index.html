@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dylan Kraklan</title>
+  <meta name="description" content="Dylan Kraklan — technology executive and engineer focused on network engineering, automation, and systems administration.">
+  <meta property="og:title" content="Dylan Kraklan">
+  <meta property="og:description" content="Technology executive and engineer. Network engineering, automation, systems.">
+  <meta property="og:url" content="https://dkraklan.me">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">dkraklan<span class="accent">.me</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="prompt"><span class="accent">dkraklan</span>:~$ whoami</p>
+        <h1>Dylan Kraklan</h1>
+        <p class="lede">Technology executive and engineer. I build and run networks — and the automation that keeps them honest.</p>
+        <div class="tags">
+          <span>Network Engineering</span>
+          <span>Automation</span>
+          <span>Systems Administration</span>
+          <span>Technical Leadership</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn" href="#experience">See experience</a>
+        </div>
+      </div>
+
+      <svg class="topology" viewBox="0 0 320 280" role="img" aria-label="Network topology illustration">
+        <g class="links">
+          <line x1="160" y1="40"  x2="70"  y2="130"/>
+          <line x1="160" y1="40"  x2="250" y2="130"/>
+          <line x1="70"  y1="130" x2="250" y2="130"/>
+          <line x1="70"  y1="130" x2="40"  y2="235"/>
+          <line x1="70"  y1="130" x2="130" y2="235"/>
+          <line x1="250" y1="130" x2="190" y2="235"/>
+          <line x1="250" y1="130" x2="280" y2="235"/>
+          <line x1="70"  y1="130" x2="190" y2="235"/>
+          <line x1="250" y1="130" x2="130" y2="235"/>
+        </g>
+        <g class="packets">
+          <circle r="3"><animateMotion dur="3s" repeatCount="indefinite" path="M160,40 L70,130 L130,235"/></circle>
+          <circle r="3"><animateMotion dur="3.6s" repeatCount="indefinite" begin="1s" path="M280,235 L250,130 L160,40"/></circle>
+          <circle r="3"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0.5s" path="M40,235 L70,130 L250,130 L190,235"/></circle>
+        </g>
+        <g class="nodes">
+          <rect x="140" y="24"  width="40" height="32" rx="6"/>
+          <rect x="50"  y="114" width="40" height="32" rx="6"/>
+          <rect x="230" y="114" width="40" height="32" rx="6"/>
+          <circle cx="40"  cy="235" r="12"/>
+          <circle cx="130" cy="235" r="12"/>
+          <circle cx="190" cy="235" r="12"/>
+          <circle cx="280" cy="235" r="12"/>
+        </g>
+        <g class="labels">
+          <text x="160" y="44">core</text>
+          <text x="70"  y="134">spine</text>
+          <text x="250" y="134">spine</text>
+        </g>
+      </svg>
+    </section>
+
+    <section id="about" class="section wrap">
+      <h2><span class="num">01</span> About</h2>
+      <div class="about">
+        <p>I've spent my career in network engineering, with a focus on automation — replacing hand-typed CLI changes with code, source control, and repeatable pipelines. Alongside the network, I bring a strong systems administration background: Linux, infrastructure, and the operational discipline that keeps production quiet.</p>
+        <p>Today I lead technology teams while staying close to the engineering. I care about reliable infrastructure, pragmatic tooling, and building teams that automate the boring parts so they can focus on the hard ones.</p>
+      </div>
+    </section>
+
+    <section id="focus" class="section wrap">
+      <h2><span class="num">02</span> Focus</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 17M12 11.5l5.5 5.5"/></svg>
+          </div>
+          <h3>Network Engineering</h3>
+          <p>Design, build, and operation of routed and switched networks — data center, campus, WAN, and the edge.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+          </div>
+          <h3>Network Automation</h3>
+          <p>Infrastructure as code, config generation, validation, and CI/CD for the network. Source of truth first, CLI last.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>
+          </div>
+          <h3>Systems Administration</h3>
+          <p>Linux and infrastructure operations, monitoring, and the services the network exists to deliver.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5M18 14.5c1.8.9 3 2.9 3 5.5"/></svg>
+          </div>
+          <h3>Technical Leadership</h3>
+          <p>Building and leading engineering teams, setting strategy, and turning infrastructure into a business advantage.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section wrap">
+      <h2><span class="num">03</span> Experience</h2>
+      <!-- TODO: replace placeholder roles with real history -->
+      <ol class="timeline">
+        <li>
+          <div class="when">20XX — Present</div>
+          <div class="what">
+            <h3>Title <span class="at">@ Company</span></h3>
+            <p>One or two lines on scope, team size, and impact.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">20XX — 20XX</div>
+          <div class="what">
+            <h3>Title <span class="at">@ Company</span></h3>
+            <p>One or two lines on scope, team size, and impact.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">20XX — 20XX</div>
+          <div class="what">
+            <h3>Title <span class="at">@ Company</span></h3>
+            <p>One or two lines on scope, team size, and impact.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="contact" class="section wrap">
+      <h2><span class="num">04</span> Contact</h2>
+      <p class="contact-lede">Want to talk networks, automation, or building infrastructure teams? Reach out on LinkedIn.</p>
+      <div class="contact-links">
+        <a class="btn primary" href="https://www.linkedin.com/in/dylan-kraklan/" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/dkraklan" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <span>&copy; <span id="year">2026</span> Dylan Kraklan</span>
+    <span class="mono">exit 0</span>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
