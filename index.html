@@ -123,27 +123,35 @@
 
     <section id="experience" class="section wrap">
       <h2><span class="num">03</span> Experience</h2>
-      <!-- TODO: replace placeholder roles with real history -->
       <ol class="timeline">
         <li>
-          <div class="when">20XX — Present</div>
+          <div class="when">2021 — Present</div>
           <div class="what">
-            <h3>Title <span class="at">@ Company</span></h3>
-            <p>One or two lines on scope, team size, and impact.</p>
+            <h3>Path Network, Inc. <span class="at">· Phoenix, AZ</span></h3>
+            <ul class="roles">
+              <li><span class="role">Chief Operating Officer</span><span class="dates">Apr 2022 — Present</span></li>
+              <li><span class="role">Director of Engineering</span><span class="dates">Jun 2021 — Present</span></li>
+            </ul>
           </div>
         </li>
         <li>
-          <div class="when">20XX — 20XX</div>
+          <div class="when">2019 — 2021</div>
           <div class="what">
-            <h3>Title <span class="at">@ Company</span></h3>
-            <p>One or two lines on scope, team size, and impact.</p>
+            <h3>TelNet Worldwide, Inc. <span class="at">· Troy, MI</span></h3>
+            <ul class="roles">
+              <li><span class="role">Lead System Administrator</span><span class="dates">Apr 2020 — Jun 2021</span></li>
+              <li class="past"><span class="role">System Administrator</span><span class="dates">Oct 2019 — Apr 2020</span></li>
+            </ul>
           </div>
         </li>
         <li>
-          <div class="when">20XX — 20XX</div>
+          <div class="when">2017 — 2019</div>
           <div class="what">
-            <h3>Title <span class="at">@ Company</span></h3>
-            <p>One or two lines on scope, team size, and impact.</p>
+            <h3>DediPath <span class="at">· Los Angeles, CA</span></h3>
+            <ul class="roles">
+              <li><span class="role">Executive Vice President</span><span class="dates">Apr 2019 — Oct 2019</span></li>
+              <li class="past"><span class="role">Vice President of Operations</span><span class="dates">Oct 2017 — Oct 2019</span></li>
+            </ul>
           </div>
         </li>
       </ol>
@@ -151,7 +159,29 @@
 
     <section id="contact" class="section wrap">
       <h2><span class="num">04</span> Contact</h2>
-      <p class="contact-lede">Want to talk networks, automation, or building infrastructure teams? Reach out on LinkedIn.</p>
+      <p class="contact-lede">Want to talk networks, automation, or building infrastructure teams? Send a message below, or find me on LinkedIn.</p>
+      <!-- Submissions are relayed by Formspree, so no email address appears in the page source. -->
+      <form class="contact-form" action="https://formspree.io/f/xaeeenjz" method="POST">
+        <div class="field-row">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" required maxlength="100">
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required maxlength="200">
+          </label>
+        </div>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" required maxlength="5000"></textarea>
+        </label>
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send message</button>
+          <p class="form-status mono" role="status" aria-live="polite"></p>
+        </div>
+      </form>
       <div class="contact-links">
         <a class="btn primary" href="https://www.linkedin.com/in/dylan-kraklan/" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/dkraklan" rel="noopener">GitHub</a>
@@ -164,6 +194,34 @@
     <span class="mono">exit 0</span>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.querySelector('.contact-form');
+    const status = form.querySelector('.form-status');
+    const submit = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submit.disabled = true;
+      status.className = 'form-status mono';
+      status.textContent = '> sending...';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        if (!res.ok) throw new Error();
+        form.reset();
+        status.classList.add('ok');
+        status.textContent = '> sent. thanks, I\'ll be in touch.';
+      } catch {
+        status.classList.add('err');
+        status.textContent = '> failed to send. try LinkedIn instead.';
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
