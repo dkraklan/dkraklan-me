@@ -159,32 +159,44 @@
 
     <section id="contact" class="section wrap">
       <h2><span class="num">04</span> Contact</h2>
-      <p class="contact-lede">Want to talk networks, automation, or building infrastructure teams? Send a message below, or find me on LinkedIn.</p>
-      <!-- Submissions are relayed by Formspree, so no email address appears in the page source. -->
-      <form class="contact-form" action="https://formspree.io/f/xaeeenjz" method="POST">
-        <div class="field-row">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" autocomplete="name" required maxlength="100">
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" autocomplete="email" required maxlength="200">
-          </label>
+      <div class="contact">
+        <div class="contact-intro">
+          <p class="contact-lede">Want to talk networks, automation, or building infrastructure teams? Drop me a message and I'll get back to you.</p>
+          <p class="contact-alt">Or find me elsewhere:</p>
+          <div class="contact-links">
+            <a class="btn" href="https://www.linkedin.com/in/dylan-kraklan/" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/dkraklan" rel="noopener">GitHub</a>
+          </div>
         </div>
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="5" required maxlength="5000"></textarea>
-        </label>
-        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="form-actions">
-          <button class="btn primary" type="submit">Send message</button>
-          <p class="form-status mono" role="status" aria-live="polite"></p>
-        </div>
-      </form>
-      <div class="contact-links">
-        <a class="btn primary" href="https://www.linkedin.com/in/dylan-kraklan/" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/dkraklan" rel="noopener">GitHub</a>
+
+        <!-- Submissions are relayed by Formspree, so no email address appears in the page source. -->
+        <form class="contact-form" action="https://formspree.io/f/xaeeenjz" method="POST">
+          <div class="window-bar" aria-hidden="true">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="window-title">~/contact/new-message</span>
+          </div>
+          <div class="window-body">
+            <div class="field-row">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="name" autocomplete="name" placeholder="Jane Doe" required maxlength="100">
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" placeholder="jane@example.com" required maxlength="200">
+              </label>
+            </div>
+            <label class="field">
+              <span>Message</span>
+              <textarea name="message" rows="6" placeholder="What's on your mind?" required maxlength="5000"></textarea>
+            </label>
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-actions">
+              <p class="form-status mono" role="status" aria-live="polite"></p>
+              <button class="btn primary" type="submit">Send message <span aria-hidden="true">&rarr;</span></button>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   </main>
